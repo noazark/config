@@ -2,11 +2,10 @@ var fs = require('fs')
   , _ = require('underscore')
 
 var Config = module.exports = (function() {
-  function Config (path, environment, verbose) {
+  function Config (path, environment, strict) {
     this.path = path || process.cwd() + '/config'
     this.environment = environment || process.env.NODE_ENV || 'development'
-    this.verbose = verbose || false
-    this.logger = console
+    this.strict = strict || false
 
     try {
       this._configFile = fs.readFileSync(path + '/' + this.environment + '.json')
@@ -30,7 +29,7 @@ Config.prototype.get = function(path, d) {
 
   for (i = 0; i < paths.length; ++i) {
     if (current[paths[i]] == undefined) {
-      if (this.verbose) logger.warn('Undefined Config Key: ' + path + ', using default ' + d)
+      if (this.strict) throw new Error('Undefined Config Key: ' + path + ', using default ' + d)
       return d;
     } else {
       current = current[paths[i]];
