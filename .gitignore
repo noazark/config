@@ -1,0 +1,18 @@
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+
+pids
+logs
+results
+
+<<<<<<< HEAD
+node_modules
+=======
+>>>>>>> ddb3611... Initial commit
+npm-debug.log

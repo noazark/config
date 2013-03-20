@@ -1,0 +1,23 @@
+{
+  "name": "Config",
+  "version": "0.0.1",
+  "description": "Configuration Management",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kpbet/config.git"
+  },
+  "author": "Noah H. Smith",
+  "license": "none",
+  "readmeFilename": "README.md",
+  "gitHead": "ddb3611291b867b847b81b0fb5bbac76983df006",
+  "devDependencies": {
+    "mocha": "~1.8.2"
+  },
+  "dependencies": {
+    "underscore": "~1.4.4"
+  }
+}
