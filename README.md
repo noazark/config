@@ -37,6 +37,7 @@ One of the main reasons I wrote `Config` is because default configuration settin
 
 ```javascript
 var foo = sampleConfig.get('non.existent.setting', 'I am a default')
-console.log(foo) //> 'I am a default'
+console.log(foo)
+// 'I am a default'
 ```
 
