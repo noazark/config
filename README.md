@@ -1,7 +1,7 @@
 Config
 ======
 
-This is the configuration helper module you've always dreamed of. It's goal is to be declaritive and environmental which makes for easier development and testing.
+This is the application configuration helper module you've always dreamed of. It's goal is to be declaritive and environmental which makes for easier development and testing.
 
 ## Usage
 
