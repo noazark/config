@@ -1,6 +1,6 @@
 {
-  "name": "Config",
-  "version": "0.0.2",
+  "name": "config",
+  "version": "0.0.3",
   "description": "Configuration Management",
   "main": "index.js",
   "scripts": {
