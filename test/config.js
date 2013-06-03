@@ -4,6 +4,10 @@ var assert = require('assert')
 describe('config', function () {
   var config = new Config('test/fixtures/', 'test')
 
+  it('exposes the raw configuration object', function () {
+    assert.deepEqual(config.raw, config._config)
+  })
+
   it('looks up a configuration key', function () {
     assert.equal(config.get('foo'), 'bar')
   })
