@@ -1,5 +1,5 @@
 var fs = require('fs')
-  , _ = require('underscore')
+  , _ = require('lodash')
 
 var Config = module.exports = (function() {
   function Config (path, environment, strict) {
@@ -30,10 +30,20 @@ Config.prototype.get = function(path, d) {
   for (i = 0; i < paths.length; ++i) {
     if (current[paths[i]] == undefined) {
       if (this.strict) throw new Error('Undefined Config Key: ' + path + ', using default ' + d)
-      return d;
+      return this.clone(d);
     } else {
       current = current[paths[i]];
     }
   }
-  return current;
+  return this.clone(current, d)
+}
+
+Config.prototype.clone = function (object, d) {
+  if (object instanceof Object) {
+    object = _.merge(d, object)
+    var clone = _.extend(new Config(), this, {_config: object})
+    return clone
+  } else {
+    return object;
+  }
 }
