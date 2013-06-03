@@ -1,6 +1,13 @@
 {
   "foo": "bar",
   "test": {
-    "key": "abcd"
+    "key": "abcd",
+    "object": {
+      "key": "efgh",
+      "butter": {
+        "loves": "popcorn",
+        "makes": "good bread"
+      }
+    }
   }
 }
