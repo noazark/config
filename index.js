@@ -22,6 +22,12 @@ var Config = module.exports = (function() {
   return Config
 })();
 
+Object.defineProperty(Config.prototype, "raw", {
+  get: function () {
+    return this._config
+  }
+});
+
 Config.prototype.get = function(path, d) {
   var paths = path.split('.')
     , current = this._config
