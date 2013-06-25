@@ -8,6 +8,7 @@
         "loves": "popcorn",
         "makes": "good bread"
       }
-    }
+    },
+    "gooey": ["butter", "cake"]
   }
 }

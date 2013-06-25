@@ -46,6 +46,16 @@ describe('config', function () {
     })
   })
 
+  describe('when a key is an array', function () {
+    before(function () {
+      this.subject = config.get('test.gooey')
+    })
+
+    it('returns an array', function () {
+      assert(this.subject instanceof Array);
+    })
+  })
+
   describe('undefined keys', function () {
     it('returns undefined', function () {
       assert.equal(config.get('does.not.exist'), undefined)

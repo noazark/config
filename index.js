@@ -45,7 +45,7 @@ Config.prototype.get = function(path, d) {
 }
 
 Config.prototype.clone = function (object, d) {
-  if (object instanceof Object) {
+  if (object instanceof Object && !(object instanceof Array)) {
     object = _.merge(d, object)
     var clone = _.extend(new Config(), this, {_config: object})
     return clone
