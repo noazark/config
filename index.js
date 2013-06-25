@@ -11,7 +11,7 @@ var Config = module.exports = (function() {
       this._configFile = fs.readFileSync(path + '/' + this.environment + '.json')
       this._config = JSON.parse(this._configFile)
     } catch (e) {
-      if (e.code === "ENOENT" && this.environment === 'development') {
+      if (e.code === "ENOENT") {
         this._config = {}
       } else {
         throw e
