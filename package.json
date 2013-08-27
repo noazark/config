@@ -1,5 +1,5 @@
 {
-  "name": "config",
+  "name": "deconfig",
   "version": "0.0.7",
   "description": "Configuration Management",
   "main": "index.js",
@@ -11,7 +11,7 @@
     "url": "git://github.com/noazark/config.git"
   },
   "author": "Noah H. Smith",
-  "license": "none",
+  "license": "MIT",
   "readmeFilename": "README.md",
   "gitHead": "ddb3611291b867b847b81b0fb5bbac76983df006",
   "devDependencies": {
