@@ -7,16 +7,7 @@ var Config = module.exports = (function() {
     this.environment = environment || process.env.NODE_ENV || 'development'
     this.strict = strict || false
 
-    try {
-      this._configFile = fs.readFileSync(path + '/' + this.environment + '.json')
-      this._config = JSON.parse(this._configFile)
-    } catch (e) {
-      if (e.code === "ENOENT") {
-        this._config = {}
-      } else {
-        throw e
-      }
-    }
+    this._init();
   }
 
   return Config
@@ -27,6 +18,13 @@ Object.defineProperty(Config.prototype, "raw", {
     return this._config
   }
 });
+
+Config.prototype.setPath = function (path) {
+  this.path = path;
+  this._init();
+
+  return this.path;
+}
 
 Config.prototype.get = function(path, d) {
   var paths = path.split('.')
@@ -51,5 +49,18 @@ Config.prototype.clone = function (object, d) {
     return clone
   } else {
     return object;
+  }
+}
+
+Config.prototype._init = function () {
+  try {
+    this._configFile = fs.readFileSync(this.path + '/' + this.environment + '.json')
+    this._config = JSON.parse(this._configFile)
+  } catch (e) {
+    if (e.code === "ENOENT") {
+      this._config = {}
+    } else {
+      throw e
+    }
   }
 }

@@ -16,6 +16,20 @@ describe('config', function () {
     assert.equal(config.get('test.key'), 'abcd')
   })
 
+  describe('setPath', function () {
+    before(function () {
+      config.setPath('test/alt-fixtures/')
+    })
+
+    after(function () {
+      config.setPath('test/fixtures/')
+    })
+
+    it('initializes with a different config', function () {
+      assert.deepEqual(config.raw, require('./alt-fixtures/test.json'))
+    })
+  })
+
   describe('when key is an object', function () {
     before(function () {
       this.subject = config.get('test.object', {
