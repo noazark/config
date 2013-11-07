@@ -6,13 +6,11 @@ lib-cov
 *.out
 *.pid
 *.gz
+*.sublime-workspace
 
 pids
 logs
 results
 
-<<<<<<< HEAD
 node_modules
-=======
->>>>>>> ddb3611... Initial commit
 npm-debug.log
